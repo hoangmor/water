@@ -7,6 +7,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <script src="{{asset('js/ios-orientationchange-fix.min.js')}}"></script>
         <!-- Styles -->
@@ -295,7 +296,171 @@
                 color: white;
                 margin-bottom: 267px;
             }
+            /*  */
+            .lunch2 .title2 {
+                margin-bottom: 50px !important;
+            }
+            .lunch2 .notice {
+                font-size: 25px;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 70px;
+                text-align: center;
+            }
+            .lunch2 .input {
+                margin-bottom: 70px;
+            }
+            .lunch3 .btn-link {
+                margin-bottom: 70px;
+                width: 100%;
+            }
+            .lunch3 .btn-link a {
+                padding: 18px 48px;
+                padding-top: 25px;
+                padding-left: 192px;
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+            .lunch3 .btn-link a .icon_in_a {
+                display: inline;
+                padding-left: 200px;
+                vertical-align: middle;
+                font-size: 30px;
+                font-weight: normal;
+                margin-right: 10px;
+            }
+            .lunch3 .btn-link a .icon_in_a_3 {
+                padding-left: 228px;
+            }
+            .lunch3 .btn-link a i {
+                font-size: 20px;
+                vertical-align: middle;
+                margin-bottom: 3px;
+                margin-right: 2px;
+            }
+            /*  */
+            .lunch4 .div-choose-min {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+            }
+            .lunch4 .title {
+                margin-bottom: 100px;
+            }
+            .lunch4 .div-choose-min .specific {
+                border: 1px solid white;
+                width: 80%;
+                border-radius: 50px;
+                padding: 15px 40px 15px 40px;
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 50px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            .lunch4 .div-choose-min .specific .specific-left {
+                width: 50%;
+                text-align: left;
+                font-size: 35px;
+                font-weight: bold;
+                color: #01396a;
+            }
+            .lunch4 .div-choose-min .specific .specific-right {
+                width: 50%;
+                text-align: right;
+            }
+            .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                font-size: 30px;
+                font-weight: bold;
+                margin-right: 43px;
+                color: #01396a;
+            }
+            .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                font-size: 30px;
+                margin-right: 15px;
+                color: #0ddbdb;
+            }
+            .lunch4 .div-choose-min .specific .specific-right i {
+                font-size: 25px;
+                margin-right: 3px;
+                color: #02a8a8;
+            }
+            .style-hover:focus,
+            .style-hover:hover {
+                box-shadow: 0 5px 15px white !important;
+                cursor: pointer;
+            }
             @media only screen  and (max-width: 1366px)  {
+                /*  */
+                .lunch4 .div-choose-min .specific {
+                    width: 100%;
+                    margin-bottom: 30px;
+                    padding: 13px 40px 13px 40px;
+                }
+                .lunch4 .div-choose-min .specific .specific-left {
+                    font-size: 27px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                    font-size: 27px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                    font-size: 27px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right i {
+                    font-size: 21px;
+                }
+                /*  */
+                .lunch3  .btn-link a span {
+                    padding: 0px 33px;
+                    padding-top: 10px;
+                    left: -20px;
+                    font-size: 53px;
+                }
+                .lunch3 {
+                    width: 60%;
+                }
+                .lunch3 .btn-link a {
+                    padding: 12px 48px;
+                    padding-top: 15px;
+                    padding-left: 172px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 .btn-link a i {
+                    font-size: 15px;
+                    vertical-align: middle;
+                    margin-bottom: 1px;
+                    margin-right: 2px;
+                }
+                .lunch3 .btn-link {
+                    margin-bottom: 54px;
+                    width: 85%;
+                }
+                .lunch3 .btn-link a .icon_in_a {
+                    display: inline;
+                    padding-left: 74px;
+                    vertical-align: middle;
+                    font-size: 21px;
+                    font-weight: normal;
+                    margin-right: 10px;
+                }
+                /*  */
+                /*  */
+                .lunch2 .title2 {
+                    margin-bottom: 40px !important;
+                }
+                .lunch2 .input {
+                    margin-bottom: 0px !important;
+                }
+                .lunch2 .notice {
+                    margin-bottom: 40px;
+                }
+                /*  */
                 .lunch .title {
                     font-size: 30px;
                     margin-bottom: 80px;
@@ -359,6 +524,77 @@
                 }
             }
             @media only screen and  (max-width: 1024px)  {
+                /* 
+                 */
+                 
+                 .lunch4 .title {
+                    font-size: 25px;
+                    margin-bottom: 48px;
+                }
+                 .lunch4 .div-choose-min .specific {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    padding: 5px  40px 5px  40px;
+                }
+                .lunch4 .div-choose-min .specific .specific-left {
+                    font-size: 20px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                    font-size: 20px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                    font-size: 20px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right i {
+                    font-size: 17px;
+                }
+                 /*  */
+                .lunch3  .btn-link a span {
+                    padding: 1px 21px;
+                    padding-top: 1px;
+                    left: -20px;
+                    font-size: 36px;
+                }
+                .lunch3 {
+                    width: 60%;
+                }
+                .lunch3 .btn-link a {
+                    padding: 7px 48px;
+                    padding-top: 10px;
+                    padding-left: 95px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 .btn-link a i {
+                    font-size: 12px;
+                    vertical-align: middle;
+                    margin-bottom: 1px;
+                    margin-right: 2px;
+                }
+                .lunch3 .btn-link {
+                    margin-bottom: 54px;
+                    width: 85%;
+                }
+                .lunch3 .btn-link a .icon_in_a {
+                    display: inline;
+                    padding-left: 74px;
+                    vertical-align: middle;
+                    font-size: 17px;
+                    font-weight: normal;
+                    margin-right: 10px;
+                }
+                /*  */
+                .lunch2 .title2 {
+                    margin-bottom: 20px !important;
+                }
+                .lunch2 .input {
+                    margin-bottom: 0px !important;
+                }
+                .lunch2 .notice {
+                    margin-bottom: 20px;
+                    margin-top: 10px;
+                }
+                /*  */
                 .lunch .title {
                     font-size: 25px;
                     margin-bottom: 80px;
@@ -417,6 +653,81 @@
                 }
             }
             @media screen and (max-width: 823px){
+                /*  */
+                .lunch4 .title {
+                    font-size: 25px;
+                    margin-bottom: 48px;
+                }
+                 .lunch4 .div-choose-min .specific {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    padding: 5px  40px 5px  40px;
+                }
+                .lunch4 .div-choose-min .specific .specific-left {
+                    font-size: 18px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                    font-size: 18px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                    font-size: 18px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right i {
+                    font-size: 15px;
+                }
+                .lunch4  {
+                    width: 65%;
+                }
+                /*  */
+                .lunch3 .btn-link a i {
+                    font-size: 6px;
+                    vertical-align: middle;
+                    margin-bottom: 1px;
+                    margin-right: 2px;
+                }
+                .lunch3 .btn-link a .icon_in_a {
+                    display: inline;
+                    padding-left: 57px;
+                    vertical-align: middle;
+                    font-size: 9px;
+                    font-weight: normal;
+                    margin-right: 10px;
+                }
+                .lunch3 .btn-link a {
+                    padding: 7px 48px;
+                    padding-top: 10px;
+                    padding-left: 72px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 .btn-link a span {
+                    padding: 1px 16px;
+                    padding-top: 1px;
+                    left: -20px;
+                    font-size: 31px;
+                }
+                .lunch3 .btn-link {
+                    margin-bottom: 32px;
+                    width: 85%;
+                }
+                /*  */
+                .lunch2 .input input {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                    margin-top: 5px;
+                }
+                .lunch2 .title2 {
+                    margin-bottom: 20px !important;
+                }
+                .lunch2 .input {
+                    margin-bottom: 0px !important;
+                }
+                .lunch2 .notice {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    margin-top: 10px;
+                }
+                /*  */
                 .main-club {
                     width: 60%;
                 }
@@ -571,6 +882,67 @@
 
             }
             @media screen and (max-width: 700px){
+
+                /*  */
+                .lunch4 .title {
+                    font-size: 25px;
+                    margin-bottom: 48px;
+                }
+                 .lunch4 .div-choose-min .specific {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    padding: 2px  30px 2px  30px;
+                }
+                .lunch4 .div-choose-min .specific .specific-left {
+                    font-size: 15px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                    font-size: 15px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                    font-size: 15px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right i {
+                    font-size: 12px;
+                }
+                .lunch4 {
+                    width: 70% !important;
+                }
+                /*  */
+                .lunch3 .btn-link a span {
+                    border-top: 5px solid #19dc76 !important;
+                    border-bottom: 5px solid #109b42 !important;
+                    border-left: 5px solid #19dc76 !important;
+                    border-right: 5px solid #109b42 !important;
+                }
+                .lunch3 .btn-link a {
+                    padding: 5px 48px;
+                    padding-top: 6px;
+                    padding-left: 72px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 {
+                    width: 70% !important;
+                }
+                .lunch3 .btn-link a {
+                    padding: 2px 48px;
+                    padding-top: 3px;
+                    padding-left: 72px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 .btn-link a span {
+                    padding: 3px 16px;
+                    padding-top: 3px;
+                    left: -14px;
+                    font-size: 22px;
+                }
+                /*  */
+                .lunch2 .notice {
+                    font-size: 15px;
+                }
+                /*  */
                 .main-club {
                     width: 70%;
                 }
@@ -657,6 +1029,94 @@
                 }
             }
             @media screen and (max-width: 430px){
+                /*  */
+                .lunch4 .title {
+                    font-size: 10px !important;
+                    margin-bottom: 15px  !important;
+                }
+                 .lunch4 .div-choose-min .specific {
+                    width: 100%;
+                    margin-bottom: 9px;
+                    padding: 1px  20px 1px  20px
+                }
+                .lunch4 .div-choose-min .specific .specific-left {
+                    font-size: 7px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-1 {
+                    font-size: 7px;
+                    margin-right: 19px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right .specific-right-2 {
+                    font-size: 7px;
+                }
+                .lunch4 .div-choose-min .specific .specific-right i {
+                    font-size: 5px;
+                }
+                .lunch4 {
+                    width: 65%% !important;
+                }
+                .lunch4 .div-choose-min .specific .specific-right {
+                    width: 50%;
+                    text-align: right;
+                    padding: 0px;
+                    margin-top: -7px;
+                }
+                /*  */
+                /*  */
+                .lunch3 .title {
+                    font-size: 10px;
+                    margin-bottom: 18px !important;
+                }
+                .lunch3 .btn-link a span {
+                    border-top: 2px solid #19dc76 !important;
+                    border-bottom: 2px solid #109b42 !important;
+                    border-left: 2px solid #19dc76 !important;
+                    border-right: 2px solid #109b42 !important;
+                }
+                .lunch3 .btn-link a span {
+                    padding: 1px 10px;
+                    padding-top: 1px;
+                    left: -14px;
+                    font-size: 17px;
+                }
+                .lunch3 .btn-link a {
+                    padding: 2px 27px;
+                    padding-top: 3px;
+                    padding-left: 9px;
+                    display: block;
+                    width: 100%;
+                }
+                .lunch3 .btn-link a i {
+                    font-size: 5px;
+                }
+                .lunch3 .btn-link a .icon_in_a {
+                    display: inline;
+                    padding-left: 38px;
+                    vertical-align: middle;
+                    font-size: 6px;
+                    font-weight: normal;
+                    margin-right: 10px;
+                }
+                .lunch3 .btn-link {
+                    margin-bottom: 18px;
+                    width: 85%;
+                }
+                /*  */
+                .lunch2 .input input {
+                    font-size: 7px;
+                    padding: 5px 10px;
+                }
+                .lunch2 .notice {
+                    font-size: 8px;
+                }
+                .lunch2 .notice {
+                    margin-top: 7px;
+                    margin-bottom: 7px;
+                }
+                .lunch2 .title2 {
+                    margin-bottom: 10px !important;
+                }
+                /*  */
                 .lunch .title {
                     font-size: 10px;
                     margin-bottom: 5px;
@@ -674,7 +1134,7 @@
                     border: 1px solid white;
                 }
                 .lunch .input input {
-                    font-size: 10px;
+                    font-size: 7px;
                     padding: 5px 10px;
                 }
                 .lunch .hotline {
@@ -846,13 +1306,55 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-club lunch">
+                <div class="main-club lunch lunch1">
                     <div class="title">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
                     <div class="input">
                         <input name="code_house" type="text" placeholder="Mã căn hộ"/>
                     </div>
-                    <button>ĐĂNG KÝ</button>
+                    <button id="register_code_house">ĐĂNG KÝ</button>
                     <p class="hotline">Hotline: 0909.0909.09</p>
+                </div>
+                <div class="main-club lunch lunch2">
+                    <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
+                    <div class="input">
+                        <input name="number_lunch" id="number_lunch" type="text" placeholder="Số lượng"/>
+                        <input name="tel_lunch" id="tel_lunch" type="text" placeholder="Số điện thoại"/>
+                    </div>
+                    <p class="notice">*Lưu ý: Số lượng đăng ký ăn trưa được tính cho người lớn và trẻ em trên 2 tuôi</p>
+                    <button id="register_full_lunch">ĐĂNG KÝ</button>
+                </div>
+                <div class="main-club lunch lunch3">
+                    <div class="title title2">VUI LÒNG CHỌN KHU VỰC ĐĂNG KÝ ĂN TRƯA</div>
+                    <div class="btn-link style-hover">
+                        <a class="btn-register-lunch" id="country_club"><span>1</span><p style="display: inline;">COUNTRY CLUB</p><p class="icon_in_a">20/200</p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></a>
+                    </div>
+                    <div class="btn-link style-hover">
+                        <a  class="btn-register-lunch"  id="club_house" style="background: #085a7f"><span style="color: #085a7f;border-top: 10px solid #0064ba;border-bottom: 10px solid #01396a;border-left: 10px solid #0064ba;border-right: 10px solid #01396a;">2</span>CLUB HOUSE<p class="icon_in_a">20/200</p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></a>
+                    </div>
+                    <div class="btn-link style-hover">
+                        <a  class="btn-register-lunch" id="river_club" style="background: #0d9d46"><span style="color: #0ea347;border-top: 10px solid #19dc76;border-bottom: 10px solid #109b42;border-left: 10px solid #19dc76;border-right: 10px solid #109b42;">3</span>RIVER CLUB<p class="icon_in_a icon_in_a_3">20/200</p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></a>
+                    </div>
+                </div>
+                <div class="main-club lunch lunch4">
+                    <div class="title title2">VUI LÒNG LỰA CHỌN KHUNG GIỜ</div>
+                    <div class="div-choose-min">
+                        <div  class="specific style-hover" id="min_1">
+                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                        </div>
+                        <div  class="specific style-hover"  id="min_2">
+                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                        </div>
+                        <div  class="specific style-hover"  id="min_3">
+                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                        </div>
+                        <div  class="specific style-hover"  id="min_4">
+                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer display-flex">
@@ -871,7 +1373,8 @@
 <script>
 $(document).ready(function(e) {
 	$('img[usemap]').rwdImageMaps();
-	
+	var quotations = [];
+    var data = {};
 	$('area').on('click', function() {
         var src_current = $('#img_background').attr("src");
         var src_new = src_current.replace("logo3", "logo4");
@@ -903,11 +1406,69 @@ $(document).ready(function(e) {
         $('.main').css("position", "relative");
         $('.main').css("display", "block");
         $('.main').css("height", "80%");
-        $('.lunch').css("display", "flex");
-        $('.lunch').css("margin", "auto");
+        $('.lunch1').css({"display": "flex", "margin": "auto"});
         $('.footer').css('display', 'none');
     });
+    $('#register_code_house').on('click', function(){
+        $('.main-club').hide();
+        $('.lunch2').css({"display": "flex", "margin": "auto"});
+        $('.footer').css('display', 'none');
+    });
+    $('#register_full_lunch').on('click', function(){
+        
+        var t1 = $('#number_lunch').val();
+        var t2 = $('#tel_lunch').val();
+        $('#number_lunch').css({"border-color": "#bbb", 
+                        "border-width":"1px", 
+                        "border-style":"solid"});
+        $('#tel_lunch').css({"border-color": "#bbb", 
+                        "border-width":"1px", 
+                        "border-style":"solid"});
+        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
+            $('.main-club').hide();
+            $('.lunch3').css({"display": "flex", "margin": "auto"});
+            $('.footer').css('display', 'none');
+            data.Amount = t1;
+            data.Tel = t2;
+        }else{
+            if(t1 == '' || !$.isNumeric(t1)){
+                $('#number_lunch').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+            }
+            if(t2 == '' || !validatePhone(t2)){
+                $('#tel_lunch').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+            }
+            
+            
+        }
+        
+    });
+    $('.btn-register-lunch').on('click', function(){
+        $('.main-club').hide();
+        $('.lunch4').css({"display": "flex", "margin": "auto"});
+        $('.footer').css('display', 'none');
+        var id = $(this).attr('id');
+        data.Area = id;
+    });
+    $('.specific').on('click', function(){
+        var id = $(this).attr('id');
+        data.Time = id;
+        quotations.push(data);
+        console.log(quotations);
+    });
 
+    function validatePhone(txtPhone) {
+        var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+        if (filter.test(txtPhone)) {
+            return true;
+        }
+        else {
+            return false;
+    }
+}
     
 
 });
