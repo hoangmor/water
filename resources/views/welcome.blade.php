@@ -1386,7 +1386,7 @@
 
             <div class="header display-flex">
                 <div class="header-main header-main-1" style="z-index: 5;">
-                    <a href="/"><img src="{{asset('images/logo.png')}}"  style="z-index: 300;"/></a>
+                    <a href="{{route('welcome')}}"><img src="{{asset('images/logo.png')}}"  style="z-index: 300;"/></a>
                 </div>
             </div>
             <div class="main">
