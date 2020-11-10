@@ -1490,15 +1490,15 @@
                             <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                         </div>
                         <div  class="specific style-hover"  id="min_2">
-                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-left">12:00 - 12:20</div>
                             <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                         </div>
                         <div  class="specific style-hover"  id="min_3">
-                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-left">12:30 - 12:50</div>
                             <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                         </div>
                         <div  class="specific style-hover"  id="min_4">
-                            <div class="specific-left">11:30 - 11:50</div>
+                            <div class="specific-left">13:00 - 13:30</div>
                             <div class="specific-right"><span class="specific-right-1">Còn</span><span class="specific-right-2">10/20</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                         </div>
                     </div>
@@ -1519,7 +1519,7 @@
                 </div>
             </div>
        </div>
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+       <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/jquery.rwdImageMaps.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/qrcode.min.js')}}"></script>
 <script type="text/javascript">

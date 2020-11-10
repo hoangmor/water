@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/welcome', [App\Http\Controllers\WellcomeController::class, 'index'])->name('welcome');
+Route::get('/', [App\Http\Controllers\WellcomeController::class, 'index'])->name('welcome');
 Route::post('/register_lunch', [App\Http\Controllers\WellcomeController::class, 'lunch'])->name('register_lunch');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/datatable', [App\Http\Controllers\HomeController::class, 'getData'])->name('getData');
