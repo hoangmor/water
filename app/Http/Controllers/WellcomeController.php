@@ -12,8 +12,34 @@ class WellcomeController extends Controller
 {
     public function index()
     {
+        //get so luong khung gio
+        $dataTimeLunch = Customer::get()->groupBy('time_start')->toArray();
+        $arrTimeStartLunch = ['11:30'=>'min_1', '12:00' => 'min_2', '12:30' => 'min_3', '13:00' => 'min_4'];
+        $arrMaxTimeStartLunch = ['11:30'=>'20', '12:00' => '20', '12:30' => '20', '13:00' => '20'];        //max time từng khung
+        $countTimeLunch = array();
+        foreach($arrTimeStartLunch as $time => $id){
+            $arrLunchTime[$id]['max'] = $arrMaxTimeStartLunch[$time];
+            if (array_key_exists($time , $dataTimeLunch)) {
+                $arrLunchTime[$id]['rest'] = $arrMaxTimeStartLunch[$time] - count($dataTimeLunch[$time]);
+            }else{
+                $arrLunchTime[$id]['rest'] = $arrMaxTimeStartLunch[$time];
+            }
+        }
+        // get khu vuc
+        $dataArea = Customer::get()->groupBy('area')->toArray();
+        $arrCharArea = ['country club'=>'area1', 'club house'=>'area2', 'river club'=>'area3'];
+        $dataMaxArea = ['country club'=>'10', 'club house' => '10', 'river club' => '10'];
+        foreach($arrCharArea as $time => $id){
+            $arrDataArea[$id]['max'] = $dataMaxArea[$time];
+            if (array_key_exists($time , $dataArea)) {
+                $arrDataArea[$id]['rest'] = $dataMaxArea[$time] - count($dataArea[$time]);
+            }else{
+                $arrDataArea[$id]['rest'] = $dataMaxArea[$time];
+            }
+        }
+
         $codeArr = ['AAA', 'BBB', 'CCC'];
-        return view('welcome', compact('codeArr'));
+        return view('welcome', compact('codeArr', 'arrLunchTime', 'arrDataArea'));
     }
     public function lunch(Request $request)
     {
