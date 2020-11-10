@@ -1309,7 +1309,7 @@
                 <div class="main-club lunch lunch1">
                     <div class="title">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
                     <div class="input">
-                        <input name="code_house" type="text" placeholder="Mã căn hộ"/>
+                        <input name="code_house" id="code_house" type="text" placeholder="Mã căn hộ"/>
                     </div>
                     <button id="register_code_house">ĐĂNG KÝ</button>
                     <p class="hotline">Hotline: 0909.0909.09</p>
@@ -1372,6 +1372,8 @@
 </script>
 <script>
 $(document).ready(function(e) {
+    var codeArr = <?php echo json_encode($codeArr); ?>;
+    console.log(codeArr);
 	$('img[usemap]').rwdImageMaps();
 	var quotations = [];
     var data = {};
@@ -1410,9 +1412,17 @@ $(document).ready(function(e) {
         $('.footer').css('display', 'none');
     });
     $('#register_code_house').on('click', function(){
-        $('.main-club').hide();
-        $('.lunch2').css({"display": "flex", "margin": "auto"});
-        $('.footer').css('display', 'none');
+        var t0 = $('#code_house').val();
+        if(jQuery.inArray(t0, codeArr) !== -1){
+            $('.main-club').hide();
+            $('.lunch2').css({"display": "flex", "margin": "auto"});
+            $('.footer').css('display', 'none');
+        }else{
+            $('#code_house').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+        }
+
     });
     $('#register_full_lunch').on('click', function(){
         
@@ -1457,7 +1467,7 @@ $(document).ready(function(e) {
         var id = $(this).attr('id');
         data.Time = id;
         quotations.push(data);
-        console.log(quotations);
+        
     });
 
     function validatePhone(txtPhone) {
