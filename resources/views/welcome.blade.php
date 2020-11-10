@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -395,7 +396,40 @@
                 box-shadow: 0 5px 15px white !important;
                 cursor: pointer;
             }
+            /* lunch5 */
+            .lunch5 .parent-qr {
+                padding: 20px;
+                background-color: white;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                margin-bottom: 50px;
+                border-radius: 20px;
+            }
+            .lunch5 .title2 {
+                margin-top: 20px;
+                margin-bottom: 60px !important;
+            }
+            .lunch5 .notice {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+            }
             @media only screen  and (max-width: 1366px)  {
+                /* lunch5 */
+                .lunch5 .parent-qr {
+                    padding: 15px;
+                    margin-bottom: 15px;
+                }
+                .lunch5 .title2 {
+                    margin-top: 10px;
+                    margin-bottom: 30px !important;
+                }
+                canvas {  /* or some other selector */
+                    width: 150px !important;
+                    height: 150px !important;
+                    }
+                .lunch5 .title {
+                    font-size: 25px;
+                }
                 /*  */
                 .lunch4 .div-choose-min .specific {
                     width: 100%;
@@ -524,6 +558,34 @@
                 }
             }
             @media only screen and  (max-width: 1024px)  {
+                 /* lunch5 */
+                 .lunch5 .icon-cuss {
+                     width: 80px !important;
+                     height: 80px !important;
+                 }
+                 .lunch5 {
+                    width: 65% !important;
+                 }
+                 .lunch5 .parent-qr {
+                    padding: 15px;
+                    margin-bottom: 10px;
+                }
+                .lunch5 .title2 {
+                    margin-top: 10px;
+                    margin-bottom: 20px !important;
+                }
+                canvas {  /* or some other selector */
+                    width: 100px !important;
+                    height: 100px !important;
+                    }
+                .lunch5 .title {
+                    font-size: 20px !important;
+                }
+                
+                .lunch5 .notice {
+                    font-size: 15px;
+                }
+                /*  */
                 /* 
                  */
                  
@@ -653,6 +715,33 @@
                 }
             }
             @media screen and (max-width: 823px){
+                 /* lunch5 */
+                 .lunch5 .icon-cuss {
+                     width: 50px !important;
+                     height: 50px !important;
+                 }
+                 .lunch5 {
+                    width: 65% !important;
+                 }
+                 .lunch5 .parent-qr {
+                    padding: 15px;
+                    margin-bottom: 5px;
+                }
+                .lunch5 .title2 {
+                    margin-top: 10px;
+                    margin-bottom: 20px !important;
+                }
+                canvas {  /* or some other selector */
+                    width: 80px !important;
+                    height: 80px !important;
+                    }
+                .lunch5 .title {
+                    font-size: 15px !important;
+                }
+                
+                .lunch5 .notice {
+                    font-size: 15px;
+                }
                 /*  */
                 .lunch4 .title {
                     font-size: 25px;
@@ -882,7 +971,35 @@
 
             }
             @media screen and (max-width: 700px){
-
+                /* lunch5 */
+                .lunch5 .icon-cuss {
+                     width: 50px !important;
+                     height: 50px !important;
+                 }
+                 .lunch5 {
+                    width: 65% !important;
+                 }
+                 .lunch5 .parent-qr {
+                    padding: 15px;
+                    margin-bottom: 5px;
+                }
+                .lunch5 .title2 {
+                    margin-top: 10px;
+                    margin-bottom: 20px !important;
+                }
+                canvas {  /* or some other selector */
+                    width: 60px !important;
+                    height: 60px !important;
+                    margin-bottom: -10px;
+                    }
+                .lunch5 .title {
+                    font-size: 12px !important;
+                }
+                
+                .lunch5 .notice {
+                    font-size: 10px;
+                }
+                /*  */
                 /*  */
                 .lunch4 .title {
                     font-size: 25px;
@@ -1029,10 +1146,40 @@
                 }
             }
             @media screen and (max-width: 430px){
+                /* lunch5 */
+                .lunch5 .icon-cuss {
+                     width: 30px  !important;
+                     height: 30px  !important;
+                 }
+                 .lunch5 {
+                    width: 65% !important;
+                 }
+                 .lunch5 .parent-qr {
+                    padding: 9px;
+                    margin-bottom: 5px;
+                    border-radius: 10px;
+                }
+                .lunch5 .title2 {
+                    margin-top: 5px;
+                    margin-bottom: 7px !important;
+                }
+                canvas {  /* or some other selector */
+                    width: 37px  !important;
+                    height: 37px  !important;
+                    margin-bottom: -8px;
+                    }
+                .lunch5 .title {
+                    font-size: 7px  !important;
+                }
+                
+                .lunch5 .notice {
+                    font-size: 6px;
+                }
+                /*  */
                 /*  */
                 .lunch4 .title {
                     font-size: 10px !important;
-                    margin-bottom: 15px  !important;
+                    margin-bottom: 8px   !important;
                 }
                  .lunch4 .div-choose-min .specific {
                     width: 100%;
@@ -1309,7 +1456,7 @@
                 <div class="main-club lunch lunch1">
                     <div class="title">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
                     <div class="input">
-                        <input name="code_house" id="code_house" type="text" placeholder="Mã căn hộ"/>
+                        <input name="code_house" id="code_house" type="text" placeholder="Mã căn hộ" autocomplete="off"/>
                     </div>
                     <button id="register_code_house">ĐĂNG KÝ</button>
                     <p class="hotline">Hotline: 0909.0909.09</p>
@@ -1317,8 +1464,8 @@
                 <div class="main-club lunch lunch2">
                     <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
                     <div class="input">
-                        <input name="number_lunch" id="number_lunch" type="text" placeholder="Số lượng"/>
-                        <input name="tel_lunch" id="tel_lunch" type="text" placeholder="Số điện thoại"/>
+                        <input name="number_lunch" id="number_lunch" type="text" placeholder="Số lượng" autocomplete="off"/>
+                        <input name="tel_lunch" id="tel_lunch" type="text" placeholder="Số điện thoại" autocomplete="off"/>
                     </div>
                     <p class="notice">*Lưu ý: Số lượng đăng ký ăn trưa được tính cho người lớn và trẻ em trên 2 tuôi</p>
                     <button id="register_full_lunch">ĐĂNG KÝ</button>
@@ -1356,6 +1503,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="main-club lunch lunch5">
+                    <img class="icon-cuss" src="{{asset('images/icon1.png')}}" width="100" height="100">
+                    <div class="title title2">CHÚC MỪNG BẠN ĐÃ ĐĂNG KÝ THÀNH CÔNG <br/><span style="font-weight: normal">SUẤT ĂN TRƯA TẠI </span><span style="text-transform: uppercase;" id="area_success"></span><br/>VÀO LÚC <span style="text-transform: uppercase;" id="start_success" style="text-transform: uppercase;"></span>-<span id="end_success"></span></div>
+                    <div class="parent-qr">
+                        <div id="example"></div>
+                    </div>
+                    <p class="notice">Vui lòng lưu giữ và đưa mã QR Code này cho nhân viên <br/> Nhà hàng để được xác nhận</p>
+                </div>
             </div>
             <div class="footer display-flex">
                 <div class="footer-main"  style="z-index: 5;">
@@ -1366,6 +1521,7 @@
        </div>
        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{{asset('js/jquery.rwdImageMaps.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/qrcode.min.js')}}"></script>
 <script type="text/javascript">
 
 
@@ -1375,7 +1531,7 @@ $(document).ready(function(e) {
     var codeArr = <?php echo json_encode($codeArr); ?>;
     console.log(codeArr);
 	$('img[usemap]').rwdImageMaps();
-	var quotations = [];
+	var dataLunch = new FormData();
     var data = {};
 	$('area').on('click', function() {
         var src_current = $('#img_background').attr("src");
@@ -1417,6 +1573,7 @@ $(document).ready(function(e) {
             $('.main-club').hide();
             $('.lunch2').css({"display": "flex", "margin": "auto"});
             $('.footer').css('display', 'none');
+            dataLunch.append("codeId", t0);
         }else{
             $('#code_house').css({"border-color": "red", 
                         "border-width":"2px", 
@@ -1438,8 +1595,8 @@ $(document).ready(function(e) {
             $('.main-club').hide();
             $('.lunch3').css({"display": "flex", "margin": "auto"});
             $('.footer').css('display', 'none');
-            data.Amount = t1;
-            data.Tel = t2;
+            dataLunch.append("Amount", t1);
+            dataLunch.append("Tel", t2);
         }else{
             if(t1 == '' || !$.isNumeric(t1)){
                 $('#number_lunch').css({"border-color": "red", 
@@ -1461,15 +1618,39 @@ $(document).ready(function(e) {
         $('.lunch4').css({"display": "flex", "margin": "auto"});
         $('.footer').css('display', 'none');
         var id = $(this).attr('id');
-        data.Area = id;
+        dataLunch.append("Area", id);
     });
     $('.specific').on('click', function(){
         var id = $(this).attr('id');
-        data.Time = id;
-        quotations.push(data);
-        
-    });
+        dataLunch.append("Time", id);
+        console.log(data);
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            });
+        $.ajax({
+            type:'POST',
+            url:'{{route('register_lunch')}}',
+            data: dataLunch,
+          processData: false,
+          contentType: false,
+            success:function(data){
+                $('.main-club').hide();
+                $('.lunch5').css({"display": "flex", "margin": "auto"});
+                $('.footer').css('display', 'none');
+                $('#area_success').html(data['area_cuss']);
+                $('#start_success').html(data['start_cuss']);
+                $('#end_success').html(data['end_cuss']);
+                var text = data['id'];
+                var data = String(text);
+                $('#example').qrcode(data);
+                
 
+            }
+        });
+    });
+    function generateQRcode(width, height, text) {
+      $('#example').qrcode({width: width,height: height,text: text});
+   }
     function validatePhone(txtPhone) {
         var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
         if (filter.test(txtPhone)) {
