@@ -94,7 +94,7 @@ class WellcomeController extends Controller
     public function ship(Request $request)
     {
         $now = new DateTime();
-        $arrArea = ['princess'=>'Princess 56', 'fortis'=>'fortis 39'];
+        $arrArea = ['princess'=>'Princess', 'fortis'=>'fortis'];
         $arrTimeStartLunch = ['min_1'=>'11:30', 'min_2' => '12:00', 'min_3' => '12:30', 'min_4' => '03:00', 'min_5' => '03:00', 'min_6' => '03:50', 'min_7' => '04:20', 'min_8' => '04:50', 'min_9' => '05:10', 'min_10' => '05:50'];
         $arrTimeEndLunch = ['min_1'=>'11:50', 'min_2' => '12:20', 'min_3' => '12:50', 'min_4' => '03:20', 'min_5' => '03:40', 'min_6' => '04:10', 'min_7' => '04:40', 'min_8' => '05:00', 'min_9' => '05:30', 'min_10' => '06:10'];
         $data['home_id'] = $request->codeId;

@@ -17,6 +17,11 @@ body {
     --width: 100vw;
     --height: calc(var(--width) * var(--ratio));
 } */
+
+.not-click {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
 .antialiased {
     display: flex;
     justify-content: center;
@@ -462,7 +467,8 @@ img[usemap] {
     position: relative;
     color: white;
     padding: 70px;
-    margin-right: 26px;
+    /* margin-right: 26px; */
+    width: 100%;
 
 }
 
@@ -548,13 +554,13 @@ img[usemap] {
         position: relative;
         color: white;
         padding: 50px;
-        margin-right: 110px;
+        /* margin-right: 110px; */
     }
     .pc1 .content-pc .my-container-img {
         overflow: hidden;
         width: 30%;
         margin: 20px;
-        border-radius: 30px;
+        border-radius: 18px;
     }
     /* lunch5 */
     .lunch5 .parent-qr {
@@ -566,8 +572,8 @@ img[usemap] {
         margin-bottom: 30px !important;
     }
     canvas {  /* or some other selector */
-        width: 150px !important;
-        height: 150px !important;
+        width: 135px !important;
+        height: 135px !important;
         }
     .lunch5 .title {
         font-size: 25px;
@@ -720,7 +726,7 @@ img[usemap] {
         position: relative;
         color: white;
         padding: 38px;
-        margin-right: 50px;
+        /* margin-right: 50px; */
         font-size: 21px;
     }
     .pc1 {
@@ -1198,11 +1204,11 @@ img[usemap] {
         position: relative;
         color: white;
         padding: 25px;
-        margin-right: 50px;
+        /* margin-right: 50px; */
         font-size: 21px;
     }
     .pc1 .content-pc .my-container-img {
-        border-radius: 13px;
+        border-radius: 8px;
     }
     /* lunch5 */
     .lunch5 .icon-cuss {
@@ -1408,7 +1414,7 @@ img[usemap] {
         position: relative;
         color: white;
         padding: 17px;
-        margin-right: 28px;
+        /* margin-right: 28px; */
         font-size: 10px;
     }
     .pc1 .title {
@@ -1418,12 +1424,12 @@ img[usemap] {
         margin: 12px;
     }
     .pc1 .content-pc {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     /* lunch5 */
     .lunch5 .icon-cuss {
-         width: 30px  !important;
-         height: 30px  !important;
+         width: 22px  !important;
+         height: 22px  !important;
      }
      .lunch5 {
         width: 65% !important;
