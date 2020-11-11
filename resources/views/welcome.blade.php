@@ -19,11 +19,11 @@
 
         <style>
             /* font */
-            @font-face {  
+            @font-face {
                 font-family: MyriadPro;
                 src: url('../../fonts/MyriadPro-Regular.otf');
             }
-            
+
         </style>
     </head>
     <body class="antialiased">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="main-club lunch lunch2 pc3">
                     <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
-                    <div class="input">
+                    <div class="input pc3-input">
                         <input name="number_lunch_pc3" id="number_lunch_pc3" type="text" placeholder="Số lượng" autocomplete="off"/>
                         <input name="tel_lunch_pc3" id="tel_lunch_pc3" type="text" placeholder="Số điện thoại" autocomplete="off"/>
                     </div>
@@ -192,7 +192,7 @@
                     </div>
                     <button id="btn_choose_ship">ĐĂNG KÝ</button>
                 </div>
-                
+
             </div>
             <div class="footer display-flex">
                 <div class="footer-main"  style="z-index: 5;">
@@ -263,21 +263,21 @@ $(document).ready(function(e) {
             $('.footer').css('display', 'none');
             dataLunch.append("codeId", t0);
         }else{
-            $('#code_house').css({"border-color": "red", 
-                        "border-width":"2px", 
+            $('#code_house').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
         }
 
     });
     $('#register_full_lunch').on('click', function(){
-        
+
         var t1 = $('#number_lunch').val();
         var t2 = $('#tel_lunch').val();
-        $('#number_lunch').css({"border-color": "#bbb", 
-                        "border-width":"1px", 
+        $('#number_lunch').css({"border-color": "#bbb",
+                        "border-width":"1px",
                         "border-style":"solid"});
-        $('#tel_lunch').css({"border-color": "#bbb", 
-                        "border-width":"1px", 
+        $('#tel_lunch').css({"border-color": "#bbb",
+                        "border-width":"1px",
                         "border-style":"solid"});
         if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
             $('.main-club').hide();
@@ -287,19 +287,19 @@ $(document).ready(function(e) {
             dataLunch.append("Tel", t2);
         }else{
             if(t1 == '' || !$.isNumeric(t1)){
-                $('#number_lunch').css({"border-color": "red", 
-                        "border-width":"2px", 
+                $('#number_lunch').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
             }
             if(t2 == '' || !validatePhone(t2)){
-                $('#tel_lunch').css({"border-color": "red", 
-                        "border-width":"2px", 
+                $('#tel_lunch').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
             }
-            
-            
+
+
         }
-        
+
     });
     $('.btn-register-lunch').on('click', function(){
         $('.main-club').hide();
@@ -330,7 +330,7 @@ $(document).ready(function(e) {
                 var text = data['id'];
                 var data = String(text);
                 $('#example').qrcode(data);
-                
+
 
             }
         });
@@ -351,8 +351,8 @@ $(document).ready(function(e) {
             $('.footer').css('display', 'none');
             dataShip.append("codeId", t0);
         }else{
-            $('#code_house_pc0').css({"border-color": "red", 
-                        "border-width":"2px", 
+            $('#code_house_pc0').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
         }
 
@@ -361,11 +361,11 @@ $(document).ready(function(e) {
         // $('.pc1').removeClass('importantRule');
         var t1 = $('#number_lunch_pc3').val();
         var t2 = $('#tel_lunch_pc3').val();
-        $('#number_lunch_pc3').css({"border-color": "#bbb", 
-                        "border-width":"1px", 
+        $('#number_lunch_pc3').css({"border-color": "#bbb",
+                        "border-width":"1px",
                         "border-style":"solid"});
-        $('#tel_lunch_pc3').css({"border-color": "#bbb", 
-                        "border-width":"1px", 
+        $('#tel_lunch_pc3').css({"border-color": "#bbb",
+                        "border-width":"1px",
                         "border-style":"solid"});
         if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
             $('.main-club').hide();
@@ -377,28 +377,28 @@ $(document).ready(function(e) {
             dataShip.append("Tel", t2);
         }else{
             if(t1 == '' || !$.isNumeric(t1)){
-                $('#number_lunch_pc3').css({"border-color": "red", 
-                        "border-width":"2px", 
+                $('#number_lunch_pc3').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
             }
             if(t2 == '' || !validatePhone(t2)){
-                $('#tel_lunch_pc3').css({"border-color": "red", 
-                        "border-width":"2px", 
+                $('#tel_lunch_pc3').css({"border-color": "red",
+                        "border-width":"2px",
                         "border-style":"solid"});
             }
-            
-            
+
+
         }
-        
+
     });
     $('.ship-choose').on('click', function(){
         var id = $(this).attr('id');
         $('.ship-choose').css({"border": "none"});
         dataShip.delete('Area');
-        $(this).css({"border-color": "white", 
-                        "border-width":"2px", 
+        $(this).css({"border-color": "white",
+                        "border-width":"2px",
                         "border-style":"solid"});
-                        
+
 
         dataShip.append("Area", id);
     });
@@ -442,7 +442,7 @@ $(document).ready(function(e) {
             return false;
     }
 }
-    
+
 
 });
 </script>
