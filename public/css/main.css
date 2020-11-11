@@ -472,7 +472,65 @@ img[usemap] {
 .importantRule {
     display: flex !important;
 }
+
+/*  */
+.pc5 {
+    width: 80% !important;
+}
+.pc5 .contain-choose-ship {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pc5 .contain-choose-ship .contain-choose-ship-0 {
+    /* border: 1px solid white; */
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pc5 .contain-choose-ship-1 {
+    width: 90%;
+    border-radius: 10px;
+    /* border: 1px solid white; */
+}
+.pc5 .div-choose-min .specific {
+    width: 90% !important;
+    margin-bottom: 35px !important;
+    cursor: pointer !important;
+}
+.pc5 .div-choose-min .specific .specific-right {
+    width: 60%;
+    text-align: right;
+}
+.pc5 .div-choose-min .specific .specific-left {
+    width: 40%;
+    text-align: left;
+}
+
 @media only screen  and (max-width: 1366px)  {
+    .pc5 {
+        width: 90% !important;
+    }
+    .pc5 .div-choose-min .specific .specific-left {
+        font-size: 22px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right .specific-right-2 {
+        font-size: 22px !important;
+    }
+    .pc5 .div-choose-min .specific {
+        width: 90% !important;
+        margin-bottom: 18px !important;
+        cursor: pointer !important;
+    }
+    .pc5 .title {
+        font-size: 30px;
+        margin-bottom: 58px !important;
+    }
+
     /*  */
     .pc3 .pc3-input {
         margin-bottom: 20px !important;
@@ -642,6 +700,15 @@ img[usemap] {
     }
 }
 @media only screen and  (max-width: 1024px)  {
+    .pc5 .div-choose-min .specific .specific-left {
+        font-size: 15px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right .specific-right-2 {
+        font-size: 15px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right i {
+        font-size: 12px;
+    }
     /*  */
     .pc3 p {
         margin-bottom: 30px !important;
@@ -819,6 +886,23 @@ img[usemap] {
     }
 }
 @media screen and (max-width: 823px){
+    .pc5 .div-choose-min .specific .specific-right .specific-right-1 {
+        font-size: 12px !important;
+    }
+    .pc5 .div-choose-min .specific {
+        width: 100%;
+        margin-bottom: 12px ;
+        padding: 1px  22px 2px  22px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-left {
+        font-size: 10px !important;
+    }
+    .lunch4 .div-choose-min .specific .specific-right i {
+        font-size: 9px !important;
+    }
+    .pc5 .title {
+        margin-bottom: 38px !important;
+    }
     /*  */
     .pc1 .title {
         margin-bottom: 17px !important;
@@ -1082,6 +1166,30 @@ img[usemap] {
 
 }
 @media screen and (max-width: 700px){
+    .pc5 .div-choose-min .specific .specific-right .specific-right-2 {
+        font-size: 9px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-left {
+        font-size: 9px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right .specific-right-1 {
+        font-size: 9px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right i {
+        font-size: 5px !important;
+    }
+    .pc5 .div-choose-min .specific {
+        padding: 0px 14px 0px 14px !important;
+    }
+    .pc5 .div-choose-min .specific {
+        margin-bottom: 12px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right {
+        margin-top: -4px;
+    }
+    .pc5 {
+        width: 90% !important;
+    }
     /*  */
     .pc1 .content-pc .my-container-img h1 {
         padding: 50px;
@@ -1149,6 +1257,9 @@ img[usemap] {
     }
     .lunch4 {
         width: 70% !important;
+    }
+    .pc5 {
+        width: 90% !important;
     }
     /*  */
     .lunch3 .btn-link a span {
@@ -1271,8 +1382,24 @@ img[usemap] {
     }
 }
 @media screen and (max-width: 430px){
+    .pc5 .div-choose-min .specific {
+        margin-bottom: 3px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-left {
+        font-size: 5px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right .specific-right-1 {
+        font-size: 5px !important;
+    }
+    .pc5 .div-choose-min .specific {
+        padding: 0px 2px 0px 1px !important;
+    }
+    /*  */
     .pc3 #tel_lunch_pc3 {
         margin-bottom: 30px !important;
+    }
+    .pc5 .div-choose-min .specific .specific-right .specific-right-2 {
+        font-size: 5px !important;
     }
     .pc1 .content-pc .my-container-img h1 {
         padding: 50px;
@@ -1348,6 +1475,9 @@ img[usemap] {
     }
     .lunch4 {
         width: 65%% !important;
+    }
+    .pc5 {
+        width: 100% !important;
     }
     .lunch4 .div-choose-min .specific .specific-right {
         width: 50%;

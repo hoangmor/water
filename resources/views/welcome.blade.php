@@ -135,24 +135,12 @@
                         <a  class="btn-register-lunch" id="river_club" style="background: #0d9d46"><span style="color: #0ea347;border-top: 10px solid #19dc76;border-bottom: 10px solid #109b42;border-left: 10px solid #19dc76;border-right: 10px solid #109b42;">3</span>RIVER CLUB<p class="icon_in_a icon_in_a_3">{{$arrDataArea['area3']['rest']}}/{{$arrDataArea['area3']['max']}}</p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></a>
                     </div>
                 </div>
-                <div class="main-club lunch lunch4">
-                    <div class="title title2">VUI LÒNG LỰA CHỌN KHUNG GIỜ</div>
+                <div class="main-club lunch lunch4 lunch4-main">
+                    <div class="title title2">KHUNG GIỜ THAM GIA TIỆC TRƯA</div>
                     <div class="div-choose-min">
-                        <div  class="specific style-hover  @if($arrLunchTime['min_1']['rest'] <= 0) stock @endif" id="min_1">
-                            <div class="specific-left">11:30 - 11:50</div>
+                        <div  class="specific specific1 style-hover  @if($arrLunchTime['min_1']['rest'] <= 0) stock @endif" id="min_1">
+                            <div class="specific-left">11:30 - 13:30</div>
                             <div class="specific-right"><span class="specific-right-1 @if($arrLunchTime['min_1']['rest'] <= 0) color-red @endif">@if($arrLunchTime['min_1']['rest'] <= 0) HẾT @else Còn @endif</span><span class="specific-right-2">{{$arrLunchTime['min_1']['rest']}}/{{$arrLunchTime['min_1']['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
-                        </div>
-                        <div  class="specific style-hover @if($arrLunchTime['min_2']['rest'] <= 0) stock @endif"  id="min_2">
-                            <div class="specific-left">12:00 - 12:20</div>
-                            <div class="specific-right"><span class="specific-right-1  @if($arrLunchTime['min_2']['rest'] <= 0) color-red @endif">@if($arrLunchTime['min_2']['rest'] <= 0) HẾT @else Còn @endif</span><span class="specific-right-2">{{$arrLunchTime['min_2']['rest']}}/{{$arrLunchTime['min_2']['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
-                        </div>
-                        <div  class="specific style-hover @if($arrLunchTime['min_3']['rest'] <= 0) stock @endif"  id="min_3">
-                            <div class="specific-left">12:30 - 12:50</div>
-                            <div class="specific-right"><span class="specific-right-1  @if($arrLunchTime['min_3']['rest'] <= 0) color-red @endif">@if($arrLunchTime['min_3']['rest'] <= 0) HẾT @else Còn @endif</span><span class="specific-right-2">{{$arrLunchTime['min_3']['rest']}}/{{$arrLunchTime['min_3']['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
-                        </div>
-                        <div  class="specific style-hover @if($arrLunchTime['min_4']['rest'] <= 0) stock @endif"  id="min_4">
-                            <div class="specific-left">13:00 - 13:30</div>
-                            <div class="specific-right"><span class="specific-right-1  @if($arrLunchTime['min_4']['rest'] <= 0) color-red @endif">@if($arrLunchTime['min_4']['rest'] <= 0) HẾT @else Còn @endif</span><span class="specific-right-2">{{$arrLunchTime['min_4']['rest']}}/{{$arrLunchTime['min_4']['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                         </div>
                     </div>
                 </div>
@@ -191,6 +179,27 @@
                         </div>
                     </div>
                     <button id="btn_choose_ship">ĐĂNG KÝ</button>
+                </div>
+                <div class="main-club lunch lunch4 pc5">
+                    <div class="title title2">VUI LÒNG LỰA CHỌN KHUNG GIỜ</div>
+                    <div class="contain-choose-ship">
+                        <div class="contain-choose-ship-left contain-choose-ship-0 div-choose-min">
+                            @foreach($arrTimeChooseShip1 as $key => $val)
+                                <div class="contain-choose-ship-1 specific specific2 style-hover @if($val['flag'] == 0) stock @endif" id="{{$key}}">
+                                    <div class="specific-left">{{$val['time']}}</div>
+                                    <div class="specific-right"><span class="specific-right-1 @if($val['flag'] == 0) color-red @endif">{{$val['stt']}}</span><span class="specific-right-2">{{$val['rest']}}/{{$val['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="contain-choose-ship-right contain-choose-ship-0 div-choose-min">
+                            @foreach($arrTimeChooseShip2 as $key => $val)
+                                <div class="contain-choose-ship-1 specific  specific2 style-hover @if($val['flag'] == 0) stock @endif"  id="{{$key}}">
+                                    <div class="specific-left">{{$val['time']}}</div>
+                                    <div class="specific-right"><span class="specific-right-1 @if($val['flag'] == 0) color-red @endif">{{$val['stt']}}</span><span class="specific-right-2">{{$val['rest']}}/{{$val['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -303,12 +312,12 @@ $(document).ready(function(e) {
     });
     $('.btn-register-lunch').on('click', function(){
         $('.main-club').hide();
-        $('.lunch4').css({"display": "flex", "margin": "auto"});
+        $('.lunch4-main').css({"display": "flex", "margin": "auto"});
         $('.footer').css('display', 'none');
         var id = $(this).attr('id');
         dataLunch.append("Area", id);
     });
-    $('.specific').on('click', function(){
+    $('.specific1').on('click', function(){
         var id = $(this).attr('id');
         dataLunch.append("Time", id);
         $.ajaxSetup({
@@ -404,8 +413,18 @@ $(document).ready(function(e) {
     });
     $('#btn_choose_ship').on('click', function(){
         if(dataShip.get("Area") == "princess" || dataShip.get("Area") == "fortis"){
-            console.log(dataShip);
-            $.ajaxSetup({
+            $('.main-club').hide();
+            $('.pc1').removeClass('importantRule');
+            $('.pc5').removeClass('importantRule');
+            $('.pc5').css({"display": "flex", "margin": "auto"});
+            $('.footer').css('display', 'none');
+       
+        }
+    });
+    $('.specific2').on('click', function(){
+        var id = $(this).attr('id');
+        dataShip.append("Time", id);
+             $.ajaxSetup({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             });
         $.ajax({
@@ -428,7 +447,6 @@ $(document).ready(function(e) {
                 $('#example').qrcode(data);
             }
         });
-        }
     });
 
 
