@@ -13,7 +13,7 @@ class WellcomeController extends Controller
     public function index()
     {
         //get so luong khung gio
-        $dataTimeLunch = Customer::get()->groupBy('time_start')->toArray();
+        $dataTimeLunch = Customer::where('type', 1)->get()->groupBy('time_start')->toArray();
         $arrTimeStartLunch = ['11:30'=>'min_1', '12:00' => 'min_2', '12:30' => 'min_3', '13:00' => 'min_4'];
         $arrMaxTimeStartLunch = ['11:30'=>'20', '12:00' => '20', '12:30' => '20', '13:00' => '20'];        //max time từng khung
         $countTimeLunch = array();
@@ -57,6 +57,25 @@ class WellcomeController extends Controller
         $data['created_at'] = $now->format('Y-m-d H:i:s');   
         $data['updated_at'] = $now->format('Y-m-d H:i:s'); 
         $data['type'] = 1;
+        $newData = Customer::create($data);
+        return ['id' => $newData->id, 'area_cuss' => $newData->area, 'start_cuss' => $newData->time_start, 'end_cuss' => $newData->time_end];
+    }
+    public function ship(Request $request)
+    {
+        $now = new DateTime();
+        $arrArea = ['princess'=>'Princess 56', 'fortis'=>'fortis 39'];
+        $arrTimeStartLunch = ['min_1'=>'11:30', 'min_2' => '12:00', 'min_3' => '12:30', 'min_4' => '13:00'];
+        $arrTimeEndLunch = ['min_1'=>'11:50', 'min_2' => '12:20', 'min_3' => '12:50', 'min_4' => '13:30'];
+        $data['home_id'] = $request->codeId;
+        $data['tel'] = $request->Tel;
+        $data['amount'] = $request->Amount;
+        $data['area'] = $arrArea[$request->Area];
+        $data['time_start'] = '11:30';
+        $data['time_end'] = '11:30';
+        $data['date'] = $now->format('Y-m-d');
+        $data['created_at'] = $now->format('Y-m-d H:i:s');   
+        $data['updated_at'] = $now->format('Y-m-d H:i:s'); 
+        $data['type'] = 2;
         $newData = Customer::create($data);
         return ['id' => $newData->id, 'area_cuss' => $newData->area, 'start_cuss' => $newData->time_start, 'end_cuss' => $newData->time_end];
     }

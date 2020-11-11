@@ -23,6 +23,7 @@
                 font-family: MyriadPro;
                 src: url('../../fonts/MyriadPro-Regular.otf');
             }
+            
         </style>
     </head>
     <body class="antialiased">
@@ -157,24 +158,41 @@
                 </div>
                 <div class="main-club lunch lunch5">
                     <img class="icon-cuss" src="{{asset('images/icon1.png')}}" width="100" height="100">
-                    <div class="title title2">CHÚC MỪNG BẠN ĐÃ ĐĂNG KÝ THÀNH CÔNG <br/><span style="font-weight: normal">SUẤT ĂN TRƯA TẠI </span><span style="text-transform: uppercase;" id="area_success"></span><br/>VÀO LÚC <span style="text-transform: uppercase;" id="start_success" style="text-transform: uppercase;"></span>-<span id="end_success"></span></div>
+                    <div class="title title2">CHÚC MỪNG BẠN ĐÃ ĐĂNG KÝ THÀNH CÔNG <br/><span style="font-weight: normal"><span id="text-title">SUẤT ĂN TRƯA TẠI<span> </span><span style="text-transform: uppercase;" id="area_success"></span><br/>VÀO LÚC <span style="text-transform: uppercase;" id="start_success" style="text-transform: uppercase;"></span>-<span id="end_success"></span></div>
                     <div class="parent-qr">
                         <div id="example"></div>
                     </div>
                     <p class="notice">Vui lòng lưu giữ và đưa mã QR Code này cho nhân viên <br/> Nhà hàng để được xác nhận</p>
                 </div>
+                <div class="main-club lunch lunch1 pc0">
+                    <div class="title">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
+                    <div class="input">
+                        <input name="code_house_pc0" id="code_house_pc0" type="text" placeholder="Mã căn hộ" autocomplete="off"/>
+                    </div>
+                    <button id="register_code_house_pc0">ĐĂNG KÝ</button>
+                    <p class="hotline">Hotline: 0909.0909.09</p>
+                </div>
+                <div class="main-club lunch lunch2 pc3">
+                    <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
+                    <div class="input">
+                        <input name="number_lunch_pc3" id="number_lunch_pc3" type="text" placeholder="Số lượng" autocomplete="off"/>
+                        <input name="tel_lunch_pc3" id="tel_lunch_pc3" type="text" placeholder="Số điện thoại" autocomplete="off"/>
+                    </div>
+                    <button id="register_full_lunch_pc3">ĐĂNG KÝ</button>
+                </div>
                 <div class="main-club lunch pc1">
                     <div class="title title2">VUI LÒNG CHON THUYỀN ĐỂ THAM QUAN</div>
                     <div class="content-pc">
-                        <div class="my-container-img">
+                        <div class="my-container-img ship1 ship-choose" id="princess">
                             <h1>Princess</h1>
                         </div>
-                        <div class="my-container-img">
+                        <div class="my-container-img ship2 ship-choose" id="fortis">
                             <h1>Fortis</h1>
                         </div>
                     </div>
-                    <button id="btn-choose-ship">ĐĂNG KÝ</button>
+                    <button id="btn_choose_ship">ĐĂNG KÝ</button>
                 </div>
+                
             </div>
             <div class="footer display-flex">
                 <div class="footer-main"  style="z-index: 5;">
@@ -229,7 +247,8 @@ $(document).ready(function(e) {
         $('.main').css("height", "80%");
         var id = $(this).attr('id');
         if(id =='btn_pc'){
-            $('.pc1').css({"display": "flex", "margin": "auto"});
+            $('.pc0').css({"display": "flex", "margin": "auto"});
+            $('.pc0').addClass('importantRule');
         }
         if(id =='btn_lunch'){
             $('.lunch1').css({"display": "flex", "margin": "auto"});
@@ -292,7 +311,6 @@ $(document).ready(function(e) {
     $('.specific').on('click', function(){
         var id = $(this).attr('id');
         dataLunch.append("Time", id);
-        console.log(data);
         $.ajaxSetup({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             });
@@ -320,6 +338,98 @@ $(document).ready(function(e) {
     function generateQRcode(width, height, text) {
       $('#example').qrcode({width: width,height: height,text: text});
    }
+
+   var dataShip = new FormData();
+    //
+    $('#register_code_house_pc0').on('click', function(){
+        var t0 = $('#code_house_pc0').val();
+        if(jQuery.inArray(t0, codeArr) !== -1){
+            $('.main-club').hide();
+            $('.pc3').css({"display": "flex", "margin": "auto"});
+            $('.pc3').addClass('importantRule');
+            $('.footer').css('display', 'none');
+            dataShip.append("codeId", t0);
+        }else{
+            $('#code_house_pc0').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+        }
+
+    });
+    $('#register_full_lunch_pc3').on('click', function(){
+        // $('.pc1').removeClass('importantRule');
+        var t1 = $('#number_lunch_pc3').val();
+        var t2 = $('#tel_lunch_pc3').val();
+        $('#number_lunch_pc3').css({"border-color": "#bbb", 
+                        "border-width":"1px", 
+                        "border-style":"solid"});
+        $('#tel_lunch_pc3').css({"border-color": "#bbb", 
+                        "border-width":"1px", 
+                        "border-style":"solid"});
+        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
+            $('.main-club').hide();
+            $('.pc1').css({"display": "flex", "margin": "auto"});
+            $('.pc1').addClass('importantRule');
+            $('.footer').css('display', 'none');
+            dataShip.append("Amount", t1);
+            dataShip.append("Tel", t2);
+        }else{
+            if(t1 == '' || !$.isNumeric(t1)){
+                $('#number_lunch_pc3').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+            }
+            if(t2 == '' || !validatePhone(t2)){
+                $('#tel_lunch_pc3').css({"border-color": "red", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+            }
+            
+            
+        }
+        
+    });
+    $('.ship-choose').on('click', function(){
+        var id = $(this).attr('id');
+        $('.ship-choose').css({"border": "none"});
+        dataShip.delete('Area');
+        $(this).css({"border-color": "white", 
+                        "border-width":"2px", 
+                        "border-style":"solid"});
+                        
+
+        dataShip.append("Area", id);
+    });
+    $('#btn_choose_ship').on('click', function(){
+        if(dataShip.get("Area") == "princess" || dataShip.get("Area") == "fortis"){
+            console.log(dataShip);
+            $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            });
+        $.ajax({
+            type:'POST',
+            url:'{{route('register_ship')}}',
+            data: dataShip,
+          processData: false,
+          contentType: false,
+            success:function(data){
+                $('.main-club').hide();
+                $('.lunch5').css({"display": "flex", "margin": "auto"});
+                $('.footer').css('display', 'none');
+                $('#text-title').html('TRẢI NGHIỆM TRÊN DU THUYỀN');
+                $('#area_success').html(data['area_cuss']);
+                $('#start_success').html(data['start_cuss']);
+                $('#end_success').html(data['end_cuss']);
+                var text = data['id'];
+                var data = String(text);
+                $('#example').qrcode(data);
+            }
+        });
+        }
+    });
+
+
+
     function validatePhone(txtPhone) {
         var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
         if (filter.test(txtPhone)) {

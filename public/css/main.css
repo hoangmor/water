@@ -425,6 +425,16 @@ img[usemap] {
     width: 40%;
     margin: 20px;
     border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  
+}
+.pc1 .content-pc .my-container-img:hover{
+    box-shadow: 0 5px 15px white;
+}
+.pc1 .content-pc .ship1:before {
+    background-image: url('../../images/02.jpg') !important;
+}
+.pc1 .content-pc .ship2:before {
+    background-image: url('../../images/Fortis.jpg') !important;
 }
 .pc1 .content-pc .my-container-img:before {
     content: ' ';
@@ -436,7 +446,7 @@ img[usemap] {
     height: 100%;
     z-index: 1;
     opacity: 0.6;
-    background-image: url('http://placekitten.com/1500/1000');
+    /* background-image: url('../../images/Fortis.jpg') !important; */
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -450,13 +460,18 @@ img[usemap] {
     text-align: center;
     z-index: 2;
     position: relative;
-    color: #01396a;
+    color: white;
     padding: 70px;
     margin-right: 26px;
 
 } 
 
-
+.pc0, .pc1, .pc2, .pc3 {
+    display: none !important;
+}
+.importantRule {
+    display: flex !important;
+}
 @media only screen  and (max-width: 1366px)  {
     /* lunch5 */
     .lunch5 .parent-qr {
