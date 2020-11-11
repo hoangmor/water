@@ -30,7 +30,7 @@ class HomeController extends Controller
     }
 
     public function getData(){
-        $customers = DB::table('customers')->select(['id', 'name', 'home_id', 'amount', 'time','date', 'area','type']);
+        $customers = DB::table('customers')->select(['id', 'tel', 'home_id', 'amount', 'time_start','time_end','date', 'area','type'])->orderByDesc('id');
 
     return Datatables::of($customers)
         ->editColumn('type', function ($customer) {
@@ -39,6 +39,10 @@ class HomeController extends Controller
             }else{
                 return 'Du thuyền';
             }
+            
+        })
+        ->editColumn('time', function ($customer) {
+            return $customer->time_start."-".$customer->time_end;
             
         })
         ->make();
@@ -54,10 +58,10 @@ class HomeController extends Controller
 
         if($customer){
             $type=$customer->type==1?"Suất ăn":"Du thuyền";
-            $data = "<p><span>Tên: </span><strong>".$customer->name."</strong></p>";
-            $data .= "<p><span>Mã căn hộ: </span><strong>".$customer->home_id."</strong></p>";
+            $data = "<p><span>Mã căn hộ: </span><strong>".$customer->home_id."</strong></p>";
+            $data .= "<p><span>Điện thoại: </span><strong>".$customer->tel."</strong></p>";
             $data .= "<p><span>Số lượng: </span><strong>".$customer->amount."</strong></p>";
-            $data .= "<p><span>Thời gian: </span><strong>".$customer->time."</strong></p>";
+            $data .= "<p><span>Thời gian: </span><strong>".$customer->time_start." - ".$customer->time_end."</strong></p>";
             $data .= "<p><span>Ngày: </span><strong>".$customer->date."</strong></p>";
             $data .= "<p><span>Khu vực/Du thuyền: </span><strong>".$customer->area."</strong></p>";
             $data .= "<p><span>Phân loại: </span><strong>".$type."</strong></p>";

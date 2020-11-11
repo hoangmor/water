@@ -22,7 +22,7 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Name</th>
+                                <th>SĐT</th>
                                 <th>Mã căn hộ</th>
                                 <th>Số lượng</th>
                                 <th>Thời gian</th>
@@ -51,10 +51,10 @@
                 ajax: "{!! route('getData') !!}",
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' },
+                    { data: 'tel', name: 'tel' },
                     { data: 'home_id', name: 'home_id' },
                     { data: 'amount', name: 'amount' },
-                    { data: 'time', name: 'time' },
+                    { data: 'time', name: 'time' , orderable: false, searchable: false},
                     { data: 'date', name: 'date' },
                     { data: 'area', name: 'area' },
                     { data: 'type', name: 'type' }

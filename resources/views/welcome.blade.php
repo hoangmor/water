@@ -120,7 +120,7 @@
                         <input name="number_lunch" id="number_lunch" type="text" placeholder="Số lượng" autocomplete="off"/>
                         <input name="tel_lunch" id="tel_lunch" type="text" placeholder="Số điện thoại" autocomplete="off"/>
                     </div>
-                    <p class="notice">*Lưu ý: Số lượng đăng ký ăn trưa được tính cho người lớn và trẻ em trên 2 tuôi</p>
+                    <p class="notice">*Lưu ý: Số lượng đăng ký ăn trưa được tính cho người lớn và trẻ em trên 2 tuổi</p>
                     <button id="register_full_lunch">ĐĂNG KÝ</button>
                 </div>
                 <div class="main-club lunch lunch3">
@@ -345,6 +345,7 @@ $(document).ready(function(e) {
         var t0 = $('#code_house_pc0').val();
         if(jQuery.inArray(t0, codeArr) !== -1){
             $('.main-club').hide();
+            $('.pc0').removeClass('importantRule');
             $('.pc3').css({"display": "flex", "margin": "auto"});
             $('.pc3').addClass('importantRule');
             $('.footer').css('display', 'none');
@@ -368,6 +369,7 @@ $(document).ready(function(e) {
                         "border-style":"solid"});
         if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
             $('.main-club').hide();
+            $('.pc3').removeClass('importantRule');
             $('.pc1').css({"display": "flex", "margin": "auto"});
             $('.pc1').addClass('importantRule');
             $('.footer').css('display', 'none');
@@ -414,6 +416,7 @@ $(document).ready(function(e) {
           contentType: false,
             success:function(data){
                 $('.main-club').hide();
+                $(".pc1").removeClass('importantRule');
                 $('.lunch5').css({"display": "flex", "margin": "auto"});
                 $('.footer').css('display', 'none');
                 $('#text-title').html('TRẢI NGHIỆM TRÊN DU THUYỀN');
