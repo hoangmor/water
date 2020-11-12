@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Code;
 use \Datetime;
 use DB;
 
@@ -12,6 +13,11 @@ class WellcomeController extends Controller
 {
     public function index()
     {
+        //get thông tin mã căn hộ
+        $codesTemp = Code::select('code_number', 'no')->get();
+        foreach($codesTemp as $key => $val){
+            $codes[$val->code_number] = $val->no;
+        }
         //get so luong khung gio
         $dataTimeLunch = Customer::where('type', 1)->get()->groupBy('time_start')->toArray();
         $arrTimeStartLunch = ['11:30'=>'min_1'];
@@ -70,7 +76,7 @@ class WellcomeController extends Controller
         $arrTimeChooseShip1 = array_slice($arrTimeChooseShip, 0, 5);
         $arrTimeChooseShip2 = array_slice($arrTimeChooseShip, 5, 5);
         $codeArr = ['AAA', 'BBB', 'CCC'];
-        return view('welcome', compact('codeArr', 'arrLunchTime', 'arrDataArea', 'arrTimeChooseShip1', 'arrTimeChooseShip2'));
+        return view('welcome', compact('codeArr', 'arrLunchTime', 'arrDataArea', 'arrTimeChooseShip1', 'arrTimeChooseShip2', 'codes'));
     }
     public function lunch(Request $request)
     {

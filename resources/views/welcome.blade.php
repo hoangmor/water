@@ -187,6 +187,7 @@
                         <div class="contain-choose-ship-left contain-choose-ship-0 div-choose-min">
                             @foreach($arrTimeChooseShip1 as $key => $val)
                                 <div class="contain-choose-ship-1 specific specific2 style-hover @if($val['flag'] == 0) stock @endif" id="{{$key}}">
+                                    <input type="hidden" value="{{$val['rest']}}" id="time_ship_{{$key}}"/>
                                     <div class="specific-left">{{$val['time']}}</div>
                                     <div class="specific-right"><span class="specific-right-1 @if($val['flag'] == 0) color-red @endif">{{$val['stt']}}</span><span class="specific-right-2">{{$val['rest']}}/{{$val['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                                 </div>
@@ -195,6 +196,7 @@
                         <div class="contain-choose-ship-right contain-choose-ship-0 div-choose-min">
                             @foreach($arrTimeChooseShip2 as $key => $val)
                                 <div class="contain-choose-ship-1 specific  specific2 style-hover @if($val['flag'] == 0) stock @endif"  id="{{$key}}">
+                                    <input type="hidden" value="{{$val['rest']}}" id="time_ship_{{$key}}"/>
                                     <div class="specific-left">{{$val['time']}}</div>
                                     <div class="specific-right"><span class="specific-right-1 @if($val['flag'] == 0) color-red @endif">{{$val['stt']}}</span><span class="specific-right-2">{{$val['rest']}}/{{$val['max']}}</span><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user"></i></div>
                                 </div>
@@ -220,7 +222,10 @@
 </script>
 <script>
 $(document).ready(function(e) {
-    var codeArr = <?php echo json_encode($codeArr); ?>;
+    // var codeArr = <?php echo json_encode($codeArr); ?>;
+    //get code
+    var codeArr = <?php echo json_encode($codes); ?>;
+    // 
 	$('img[usemap]').rwdImageMaps();
 	var dataLunch = new FormData();
     var data = {};
@@ -267,7 +272,8 @@ $(document).ready(function(e) {
     });
     $('#register_code_house').on('click', function(){
         var t0 = $('#code_house').val();
-        if(jQuery.inArray(t0, codeArr) !== -1){
+        // if(jQuery.inArray(t0, codeArr) !== -1){
+        if(codeArr[t0] != null){ 
             $('.main-club').hide();
             $('.lunch2').css({"display": "flex", "margin": "auto"});
             $('.footer').css('display', 'none');
@@ -289,14 +295,14 @@ $(document).ready(function(e) {
         $('#tel_lunch').css({"border-color": "#bbb",
                         "border-width":"1px",
                         "border-style":"solid"});
-        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
+        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2) && t1 <= codeArr[dataLunch.get('codeId')]){
             $('.main-club').hide();
             $('.lunch3').css({"display": "flex", "margin": "auto"});
             $('.footer').css('display', 'none');
             dataLunch.append("Amount", t1);
             dataLunch.append("Tel", t2);
         }else{
-            if(t1 == '' || !$.isNumeric(t1)){
+            if(t1 == '' || !$.isNumeric(t1) || t1 > codeArr[dataLunch.get('codeId')]){
                 $('#number_lunch').css({"border-color": "red",
                         "border-width":"2px",
                         "border-style":"solid"});
@@ -353,7 +359,7 @@ $(document).ready(function(e) {
     //
     $('#register_code_house_pc0').on('click', function(){
         var t0 = $('#code_house_pc0').val();
-        if(jQuery.inArray(t0, codeArr) !== -1){
+        if(codeArr[t0] != null){ 
             $('.main-club').hide();
             $('.pc0').removeClass('importantRule');
             $('.pc3').css({"display": "flex", "margin": "auto"});
@@ -377,7 +383,7 @@ $(document).ready(function(e) {
         $('#tel_lunch_pc3').css({"border-color": "#bbb",
                         "border-width":"1px",
                         "border-style":"solid"});
-        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2)){
+        if(t1 != '' && t2 != '' && $.isNumeric(t1) && validatePhone(t2) && t1 <= codeArr[dataShip.get('codeId')]){
             $('.main-club').hide();
             $('.pc3').removeClass('importantRule');
             $('.pc1').css({"display": "flex", "margin": "auto"});
@@ -386,7 +392,7 @@ $(document).ready(function(e) {
             dataShip.append("Amount", t1);
             dataShip.append("Tel", t2);
         }else{
-            if(t1 == '' || !$.isNumeric(t1)){
+            if(t1 == '' || !$.isNumeric(t1) || t1 > codeArr[dataShip.get('codeId')]){
                 $('#number_lunch_pc3').css({"border-color": "red",
                         "border-width":"2px",
                         "border-style":"solid"});
@@ -425,32 +431,43 @@ $(document).ready(function(e) {
     $('.specific2').on('click', function(){
         $('.specific2').addClass('not-click');
         var id = $(this).attr('id');
-        dataShip.append("Time", id);
+        var restTemp = $('#time_ship_'+id).val();
+        // alert(dataShip.get("Amount"));
+        // alert(restTemp);
+        if(dataShip.get("Amount") > parseInt(restTemp)){
+            $(this).css({"border-color": "red",
+                        "border-width":"2px",
+                        "border-style":"solid"});
+            $('.specific2').removeClass('not-click');
+        }else{
+            dataShip.append("Time", id);
              $.ajaxSetup({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             });
-        $.ajax({
-            type:'POST',
-            url:'{{route('register_ship')}}',
-            data: dataShip,
-          processData: false,
-          contentType: false,
-            success:function(data){
-                $('.main-club').hide();
-                $(".pc1").removeClass('importantRule');
-                $('.lunch5').css({"display": "flex", "margin": "auto"});
-                $('.footer').css('display', 'none');
-                $('#text-title').html('TRẢI NGHIỆM TRÊN DU THUYỀN');
-                $('#area_success').html(data['area_cuss']);
-                $('#start_success').html(data['start_cuss']);
-                $('#end_success').html(data['end_cuss']);
-                $('#notice-cuss').html('Bến thuyền để đăng ký');
-                $('#notice-cuss2').html('Đến trước giờ khởi hành ít nhất 15 phút');
-                var text = data['id'];
-                var data = String(text);
-                $('#example').qrcode(data);
-            }
-        });
+            $.ajax({
+                type:'POST',
+                url:'{{route('register_ship')}}',
+                data: dataShip,
+            processData: false,
+            contentType: false,
+                success:function(data){
+                    $('.main-club').hide();
+                    $(".pc1").removeClass('importantRule');
+                    $('.lunch5').css({"display": "flex", "margin": "auto"});
+                    $('.footer').css('display', 'none');
+                    $('#text-title').html('TRẢI NGHIỆM TRÊN DU THUYỀN');
+                    $('#area_success').html(data['area_cuss']);
+                    $('#start_success').html(data['start_cuss']);
+                    $('#end_success').html(data['end_cuss']);
+                    $('#notice-cuss').html('Bến thuyền để đăng ký');
+                    $('#notice-cuss2').html('Đến trước giờ khởi hành ít nhất 15 phút');
+                    var text = data['id'];
+                    var data = String(text);
+                    $('#example').qrcode(data);
+                }
+            });
+        }
+        
     });
 
 
