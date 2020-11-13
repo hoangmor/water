@@ -26,7 +26,11 @@ class WellcomeController extends Controller
         foreach($arrTimeStartLunch as $time => $id){
             $arrLunchTime[$id]['max'] = $arrMaxTimeStartLunch[$time];
             if (array_key_exists($time , $dataTimeLunch)) {
-                $arrLunchTime[$id]['rest'] = $arrMaxTimeStartLunch[$time] - count($dataTimeLunch[$time]);
+                $t = 0;
+                foreach($dataTimeLunch[$time] as $val1){
+                        $t = $t +  $val1['amount'];
+                }
+                $arrLunchTime[$id]['rest'] = $arrMaxTimeStartLunch[$time] - $t;
             }else{
                 $arrLunchTime[$id]['rest'] = $arrMaxTimeStartLunch[$time];
             }
@@ -38,7 +42,11 @@ class WellcomeController extends Controller
         foreach($arrCharArea as $time => $id){
             $arrDataArea[$id]['max'] = $dataMaxArea[$time];
             if (array_key_exists($time , $dataArea)) {
-                $arrDataArea[$id]['rest'] = $dataMaxArea[$time] - count($dataArea[$time]);
+                $t = 0;
+                foreach($dataArea[$time] as $val1){
+                        $t = $t +  $val1['amount'];
+                }
+                $arrDataArea[$id]['rest'] = $dataMaxArea[$time] - $t;
             }else{
                 $arrDataArea[$id]['rest'] = $dataMaxArea[$time];
             }
@@ -60,7 +68,10 @@ class WellcomeController extends Controller
         $arrTimeEndShip = ['11:50'=>'min_1', '12:20' => 'min_2', '12:50' => 'min_3', '03:20' => 'min_4', '03:40' => 'min_5', '04:10' => 'min_6', '04:40' => 'min_7', '05:00' => 'min_8', '05:30' => 'min_9', '06:10' => 'min_10'];
         foreach($arrTimeEndShip as $time => $id){
             if(array_key_exists($time , $dataTimeShip)){
-                $t = count($dataTimeShip[$time]);
+                $t = 0;
+                foreach($dataTimeShip[$time] as $val1){
+                        $t = $t +  $val1['amount'];
+                }
                 $arrTimeChooseShip[$id]['rest'] = $arrTimeChooseShip[$id]['max'] - $t;
             }else{
                 $arrTimeChooseShip[$id]['rest'] = $arrTimeChooseShip[$id]['max'];
