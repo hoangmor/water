@@ -113,7 +113,7 @@
                         <input name="code_house" id="code_house" type="text" placeholder="Mã căn hộ" autocomplete="off"/>
                     </div>
                     <button id="register_code_house">ĐĂNG KÝ</button>
-                    <p class="hotline">Hotline: 0909.0909.09</p>
+                    <p class="hotline">Hotline: 0783.9907.75</p>
                 </div>
                 <div class="main-club lunch lunch2">
                     <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>
@@ -159,7 +159,7 @@
                         <input name="code_house_pc0" id="code_house_pc0" type="text" placeholder="Mã căn hộ" autocomplete="off"/>
                     </div>
                     <button id="register_code_house_pc0">ĐĂNG KÝ</button>
-                    <p class="hotline">Hotline: 0909.0909.09</p>
+                    <p class="hotline">Hotline: 0783.9907.75</p>
                 </div>
                 <div class="main-club lunch lunch2 pc3">
                     <div class="title title2">VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN</div>

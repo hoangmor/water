@@ -65,4 +65,30 @@
             });
         // });        
     </script>
+    <script>
+    $(document).ready(function(e) {
+        $("#users-table").on('change',"input[type='checkbox']",function(e){
+            var data = new FormData();
+            var id = $(this).attr('id');
+            var value = $(this).val();
+            var sttCurrent = $(this).data('myval');
+            data.append("id", id);
+            data.append("value", value);
+            data.append("sttCurrent", sttCurrent);
+            $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            });
+            $.ajax({
+                type:'POST',
+                url:'{{route('updateStatus')}}',
+                data: data,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                    $("#users-table #"+id).prop('disabled', true);
+                }
+            });
+        });
+    });
+    </script>
 @endsection
