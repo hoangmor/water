@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Danh sách đăng ký') }}</div>
 
@@ -29,6 +29,7 @@
                                 <th>Ngày</th>
                                 <th>Khu vực/Du thuyền</th>
                                 <th>Phân loại</th>
+                                <th>Check-in</th>
                             </tr>
                         </thead>
                     </table>
@@ -57,7 +58,9 @@
                     { data: 'time', name: 'time' , orderable: false, searchable: false},
                     { data: 'date', name: 'date' },
                     { data: 'area', name: 'area' },
-                    { data: 'type', name: 'type' }
+                    { data: 'type', name: 'type' },
+                    { data: 'is_check', name: 'is_check' },
+                   
                 ]
             });
         // });        
