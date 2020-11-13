@@ -70,7 +70,7 @@ class HomeController extends Controller
             }else{
                 $data = "";
             }
-            $data = "<p><span>Mã căn hộ: </span><strong>".$customer->home_id."</strong></p>";
+            $data .= "<p><span>Mã căn hộ: </span><strong>".$customer->home_id."</strong></p>";
             $data .= "<p><span>Điện thoại: </span><strong>".$customer->tel."</strong></p>";
             $data .= "<p><span>Số lượng: </span><strong>".$customer->amount."</strong></p>";
             $data .= "<p><span>Thời gian: </span><strong>".$customer->time_start." - ".$customer->time_end."</strong></p>";
