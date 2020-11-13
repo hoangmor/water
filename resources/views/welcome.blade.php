@@ -325,6 +325,7 @@ $(document).ready(function(e) {
         dataLunch.append("Area", id);
     });
     $('.specific1').on('click', function(){
+        $('.specific1').addClass('not-click');
         var id = $(this).attr('id');
         dataLunch.append("Time", id);
         $.ajaxSetup({
