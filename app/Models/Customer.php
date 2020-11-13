@@ -10,6 +10,6 @@ class Customer extends Model
     use HasFactory;
     protected $table = 'customers';
     protected $fillable = [
-        'home_id', 'amount', 'tel', 'time_start', 'time_end', 'date', 'area', 'type', 'created_at', 'updated_at', 'is_check',
+        'home_id', 'amount', 'tel', 'time_start', 'time_end', 'date', 'area', 'type', 'created_at', 'updated_at', 'status',
     ];
 }

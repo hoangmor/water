@@ -30,7 +30,7 @@ class HomeController extends Controller
     }
 
     public function getData(){
-        $customers = DB::table('customers')->select(['id', 'tel', 'home_id', 'amount', 'time_start','time_end','date', 'area','type', 'is_check'])->orderByDesc('id');
+        $customers = DB::table('customers')->select(['id', 'tel', 'home_id', 'amount', 'time_start','time_end','date', 'area','type', 'status'])->orderByDesc('id');
 
     return Datatables::of($customers)
         ->editColumn('type', function ($customer) {
@@ -41,14 +41,14 @@ class HomeController extends Controller
             }
             
         })
-        ->editColumn('is_check', function ($customer) {
-            if($customer->is_check == 1){
-                return "<input type='checkbox' class='handle-checked' checked name='id' value='".$customer->is_check."'>";
+        ->editColumn('status', function ($customer) {
+            if($customer->status == 1){
+                return "<input type='checkbox' class='handle-checked' checked name='id' value='".$customer->status."'>";
             }else{
-                return "<input type='checkbox' class='handle-checked' name='id' value='".$customer->is_check."'>";
+                return "<input type='checkbox' class='handle-checked' name='id' value='".$customer->status."'>";
             }
             
-        })->rawColumns(['is_check'])
+        })->rawColumns(['status'])
         ->editColumn('time', function ($customer) {
             return $customer->time_start."-".$customer->time_end;
             

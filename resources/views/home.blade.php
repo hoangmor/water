@@ -59,7 +59,7 @@
                     { data: 'date', name: 'date' },
                     { data: 'area', name: 'area' },
                     { data: 'type', name: 'type' },
-                    { data: 'is_check', name: 'is_check' },
+                    { data: 'status', name: 'status' },
                    
                 ]
             });
